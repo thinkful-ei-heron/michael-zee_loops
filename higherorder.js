@@ -89,3 +89,10 @@ function goTurtle(movements) {
 }
 
 goTurtle([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+
+function decode(str){
+  let arr = str.split(' ');
+  return arr.reduce((acc, cur) => 3 === cur.length ? acc.concat(' ') : acc.concat(cur.slice(-1).toUpperCase()), '');
+}
+
+console.log(decode('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
