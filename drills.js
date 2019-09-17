@@ -22,10 +22,9 @@ function min(numbers) {
   }
   return numMin;
 }
-//   for (let i = 0; i < numbers.length; i++) {
-//     if (numbers[i] > numMax) {
-//       numMax = numbers[i];
-//     }
-//   }
-//   return numMax;
-// }
+
+function average(numbers) {
+  let sum = 0;
+  numbers.forEach(number => sum += number);
+  return sum/numbers.length;
+}
