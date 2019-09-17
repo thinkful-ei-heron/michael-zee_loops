@@ -73,3 +73,19 @@ avalancheWarning('I-70 between Frisco and Copper Mountain');
 avalancheWarning('the Eisenhower-Johnson Tunnel');
 avalancheWarning('I-70 between Copper Mountain and Vail');
 wildfireWarning('US-36 near Boulder');
+
+function goTurtle(movements) {
+  movements
+    //strip items where turtle moves back OR right
+    .filter(movement => !(movement[0] < 0 || movement[1] < 0))
+    //new array with total steps for each remaining movement
+    .map(move => move[0] + move[1])
+    //print the steps to console
+    .forEach((steps, index) => {
+      console.log(
+        `Movement #${index + 1}: ${steps} step${steps !== 1 ? 's' : ''}`
+      );
+    });
+}
+
+goTurtle([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
