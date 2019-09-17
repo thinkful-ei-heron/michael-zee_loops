@@ -42,20 +42,22 @@ const filteredNames = filter(myNames, function(name) {
 console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
-function hazardWarningCreator(typeOfWarning){
+function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
-  return function(location){
+  return function(location) {
     warningCounter++;
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${(1 === warningCounter) ? 'time' : 'times'} today!`)
-  }
-
+    console.log(
+      `The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${
+        1 === warningCounter ? 'time' : 'times'
+      } today!`
+    );
+  };
 }
 
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
 const avalancheWarning = hazardWarningCreator('avalanche closure');
-const wildfireWarning = hazardWarningCreator('wildfire')
-
+const wildfireWarning = hazardWarningCreator('wildfire');
 
 rocksWarning('Main St and Pacific Ave');
 // => DANGER There is a Rocks on the Road hazard at Main St and Pacific Ave
